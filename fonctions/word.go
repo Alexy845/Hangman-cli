@@ -15,7 +15,7 @@ type Word struct { // Structure du mot à trouver
 	HangmanPositions [10]string
 }
 
-// Choisit n lettres aléatoirement et les affiches à la place des _ dans le slice de runes
+// Choose n random letters in a slice of runes
 func (w *Word) Rand_letters() {
 	var numbers int
 	for i := 0; i < w.N; i++ { // Choisi n lettres aléatoires
@@ -28,7 +28,7 @@ func (w *Word) Rand_letters() {
 	}
 }
 
-// Boucle de jeu principale infinie jusqu'à ce que le joueur gagne ou perde
+// infinite loop to play the game until the player wins or loses
 func (w *Word) Play() {
 	fmt.Println("Good Luck, you have 10 attempts.")
 	fmt.Println(strings.ToUpper(AfficheRune(w.Word_runes)))
@@ -44,15 +44,15 @@ func (w *Word) Play() {
 			break
 		} else {
 			fmt.Println("Enter a letter")
-			var letter string
+			var letter rune
 			input := bufio.NewScanner(os.Stdin)               // Créer un scanner sur l'entrée
 			input.Scan()                                      // Lance le scan
 			for _, i := range strings.ToLower(input.Text()) { // Si la lettre est en majuscule, on la passe en minuscule
-				letter = string(i)
+				letter = i
 			}
 			fmt.Println("Choose : " + strings.ToUpper(input.Text()))
 			fmt.Print("\n")
-			w.Check_letter(letter)                                 // Verifie si la lettre est dans le mot
+			w.Check_letter(letter)                                  // Verifie si la lettre est dans le mot
 			fmt.Println(strings.ToUpper(AfficheRune(w.Word_runes))) // Affiche le mot avec les lettres trouvées
 			fmt.Print("\n")
 		}

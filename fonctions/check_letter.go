@@ -7,10 +7,10 @@ import (
 )
 
 // Check if the letter is in the word
-func (w *Word)Check_letter(letter string) {
-	if strings.Contains(w.The_word, string(letter)) {
+func (w *Word)Check_letter(letter rune) {
+	if strings.ContainsRune(w.The_word, letter) {
 		for i := 0; i < len(w.The_word)-1; i++ {
-			if (w.The_word[i]) == letter {
+			if rune(w.The_word[i]) == letter {
 				w.Word_runes = Replace_rune(w.Word_runes, letter, i)
 			}
 		}
