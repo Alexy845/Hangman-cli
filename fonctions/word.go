@@ -52,7 +52,11 @@ func (w *Word) Play() {
 			}
 			fmt.Println("Choose : " + strings.ToUpper(input.Text()))
 			fmt.Print("\n")
-			w.Check_letter(letter)                               // Verifie si la lettre est dans le mot
+			if len(strings.ToUpper(input.Text())) == 1 {
+				w.Check_letter(letter) // Verifie si la lettre est dans le mot
+			} else if len(strings.ToUpper(input.Text())) > 1 {
+				w.Check_string(string(letter))
+			}
 			fmt.Println(strings.ToUpper(AfficheRune(w.Word_runes))) // Affiche le mot avec les lettres trouvées
 			fmt.Print("\n")
 		}
