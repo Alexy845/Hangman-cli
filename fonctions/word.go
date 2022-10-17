@@ -44,15 +44,15 @@ func (w *Word) Play() {
 			break
 		} else {
 			fmt.Println("Enter a letter")
-			var letter rune
+			var letter string
 			input := bufio.NewScanner(os.Stdin)               // Créer un scanner sur l'entrée
 			input.Scan()                                      // Lance le scan
 			for _, i := range strings.ToLower(input.Text()) { // Si la lettre est en majuscule, on la passe en minuscule
-				letter = i
+				letter = string(i)
 			}
 			fmt.Println("Choose : " + strings.ToUpper(input.Text()))
 			fmt.Print("\n")
-			w.Check_letter(letter)                                  // Verifie si la lettre est dans le mot
+			w.Check_letter(letter)                                 // Verifie si la lettre est dans le mot
 			fmt.Println(strings.ToUpper(AfficheRune(w.Word_runes))) // Affiche le mot avec les lettres trouvées
 			fmt.Print("\n")
 		}
