@@ -4,6 +4,7 @@ import (
 	"bufio"
 	"fmt"
 	"os"
+	"strconv"
 	"strings"
 )
 
@@ -31,6 +32,7 @@ func (w *Word) Rand_letters() {
 // infinite loop to play the game until the player wins or loses
 func (w *Word) Play() {
 	fmt.Println("Good Luck, you have 10 attempts.")
+	fmt.Println(w.The_word)
 	fmt.Println(strings.ToUpper(AfficheRune(w.Word_runes)))
 	fmt.Print("\n")
 	for {
@@ -52,10 +54,18 @@ func (w *Word) Play() {
 			}
 			fmt.Println("Choose : " + strings.ToUpper(input.Text()))
 			fmt.Print("\n")
-			if len(strings.ToUpper(input.Text())) == 1 {
+			if len(input.Text()) == 1 {
 				w.Check_letter(letter) // Verifie si la lettre est dans le mot
-			} else if len(strings.ToUpper(input.Text())) > 1 {
-				w.Check_string(string(letter))
+			} else if len(input.Text()) > 1 {
+				if input.Text() == w.The_word {
+					fmt.Println("Congrat !")
+					fmt.Println("The word was", w.The_word)
+					break
+				} else {
+					fmt.Println("Not present in the word, " + strconv.Itoa(w.Attempts) + " attemps remaining")
+					w.Attempts -= 2
+					Affiche(9 - w.Attempts)
+				}
 			}
 			fmt.Println(strings.ToUpper(AfficheRune(w.Word_runes))) // Affiche le mot avec les lettres trouvées
 			fmt.Print("\n")
