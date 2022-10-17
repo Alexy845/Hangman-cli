@@ -53,7 +53,7 @@ func (w *Word) Play() {
 			fmt.Println("Choose : " + strings.ToUpper(input.Text()))
 			fmt.Print("\n")
 			w.Check_letter(letter)
-			fmt.Println(strings.ToUpper(AfficheRune(w.Word_runes)))
+			fmt.Println(AfficheRune(w.Word_runes))
 			fmt.Print("\n")
 		}
 	}
