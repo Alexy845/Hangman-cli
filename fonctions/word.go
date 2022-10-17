@@ -15,7 +15,7 @@ type Word struct { // Structure du mot à trouver
 	HangmanPositions [10]string
 }
 
-// Choose n random letters in a slice of runes
+// Choisit n lettres aléatoirement et les affiches à la place des _ dans le slice de runes
 func (w *Word) Rand_letters() {
 	var numbers int
 	for i := 0; i < w.N; i++ { // Choisi n lettres aléatoires
@@ -28,7 +28,7 @@ func (w *Word) Rand_letters() {
 	}
 }
 
-// infinite loop to play the game until the player wins or loses
+// Boucle de jeu principale infinie jusqu'à ce que le joueur gagne ou perde
 func (w *Word) Play() {
 	fmt.Println("Good Luck, you have 10 attempts.")
 	fmt.Println(strings.ToUpper(AfficheRune(w.Word_runes)))
