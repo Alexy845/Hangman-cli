@@ -2,11 +2,7 @@ package main
 
 import (
 	"fmt"
-<<<<<<< HEAD
 	hangman "hangman/fonctions"
-=======
-	"hangman/fonctions"
->>>>>>> 8c75157df165fe8a240f1579ee252c653c2e6f8d
 	"log"
 	"os"
 )
