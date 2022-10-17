@@ -4,6 +4,7 @@ import (
 	"bufio"
 	"fmt"
 	"os"
+	"strings"
 )
 
 type Word struct {
@@ -30,7 +31,7 @@ func (w *Word) Rand_letters() {
 // infinite loop to play the game until the player wins or loses
 func (w *Word) Play() {
 	fmt.Println("Good Luck, you have 10 attempts.")
-	fmt.Println(AfficheRune(w.Word_runes))
+	fmt.Println(strings.ToUpper(AfficheRune(w.Word_runes)))
 	fmt.Print("\n")
 	for {
 		if w.Attempts == 0 {
@@ -49,10 +50,10 @@ func (w *Word) Play() {
 			for _, i := range input.Text() {
 				letter = i
 			}
-			fmt.Println("Choose : " + input.Text())
+			fmt.Println("Choose : " + strings.ToUpper(input.Text()))
 			fmt.Print("\n")
 			w.Check_letter(letter)
-			fmt.Println(AfficheRune(w.Word_runes))
+			fmt.Println(strings.ToUpper(AfficheRune(w.Word_runes)))
 			fmt.Print("\n")
 		}
 	}
