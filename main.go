@@ -24,7 +24,7 @@ func main() {
 		}
 		word := hangman.Word{The_word: hangman.Rand_word(dico), Word_runes: []rune{}, N: 0, Attempts: 10}
 		word.N = len(word.The_word)/2 - 1
-		word.Word_runes = make([]rune, len(word.The_word))
+		word.Word_runes = make([]rune, len(word.The_word)-1)
 		word.Rand_letters()
 		word.Play()
 	default:
