@@ -47,7 +47,7 @@ func (w *Word) Play() {
 			var letter rune
 			input := bufio.NewScanner(os.Stdin) // créer un scanner sur l'entrée
 			input.Scan()                        // lance le scan
-			for _, i := range input.Text() {
+			for _, i := range strings.ToLower(input.Text()) {
 				letter = i
 			}
 			fmt.Println("Choose : " + strings.ToUpper(input.Text()))
