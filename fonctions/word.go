@@ -52,6 +52,7 @@ func (w *Word) Play() {
 			fmt.Println("Choose : " + input.Text())
 			fmt.Print("\n")
 			w.Check_letter(letter)
+			fmt.Println(w.Word_runes)
 			fmt.Println(AfficheRune(w.Word_runes))
 			fmt.Print("\n")
 		}
