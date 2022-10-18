@@ -38,9 +38,9 @@ func (w *Word) Play() {
 			var letter rune                     // Création d'une variable rune
 			input := bufio.NewScanner(os.Stdin) // Créer un scanner sur l'entrée
 			input.Scan()                        // Lance le scan
-			fmt.Println("Choose : " + strings.ToUpper(input.Text()))
-			fmt.Print("\n")
 			str := Convert_string_with_accent_to_string(input.Text())
+			fmt.Println("Choose : " + strings.ToUpper(str))
+			fmt.Print("\n")
 			if len(str) == 1 { // Si la l'entrée est une lettre
 				letter = rune(strings.ToLower(str)[0])        // Converti la lettre en rune
 				w.Check_letter(letter)                        // Verifie si la lettre est dans le mot
