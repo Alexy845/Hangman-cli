@@ -56,10 +56,12 @@ func (w *Word) Play() {
 				w.Check_letter(letter)         // Verifie si la lettre est dans le mot
 			} else if len(input.Text()) > 1 { // Si la longueur de l'entrée est supérieur à 1
 				if w.Check_word(strings.ToLower(input.Text())) { // Verifie si le mot est le bon
+					fmt.Println("V")
 					fmt.Println("Congrat !")
 					fmt.Println("The word was", w.The_word)
 					return // Si le mot est bon, on sort de la boucle
 				} else { // Sinon on perd une vie
+					fmt.Println("F")
 					w.Attempts -= 2 // On perd 2 vies
 					fmt.Println("Not present in the word, " + strconv.Itoa(w.Attempts) + " attemps remaining")
 					Affiche(9 - w.Attempts) // On affiche le pendu
