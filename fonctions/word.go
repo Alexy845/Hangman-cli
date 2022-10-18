@@ -21,15 +21,14 @@ type Word struct { // Structure du mot à trouver
 func (w *Word) Play() {
 	fmt.Println("Good Luck, you have 10 attempts.")
 	fmt.Println(strings.ToUpper(AfficheRune(w.Word_runes)))
-	fmt.Println(len("é"))
 	fmt.Print("\n")
 	for {
 		if w.Attempts < 0 { // Si le joueur n'a plus d'essais il perd
-			fmt.Println("You lost !")
+			Print_lose()
 			fmt.Println("The word was", w.The_word)
 			return // On sort de la boucle
 		} else if w.Check_win() { // Si le joueur a trouvé le mot il gagne
-			fmt.Println("Congrat !")
+			Print_win()
 			fmt.Println("The word was", w.The_word)
 			return // On sort de la boucle
 		} else {
@@ -50,13 +49,16 @@ func (w *Word) Play() {
 					return
 				}
 				if w.Check_word(strings.ToLower(str)) { // Verifie si le mot est le bon
-					fmt.Println("Congrat !")
+					Print_win()
 					fmt.Println("The word was", w.The_word)
 					return // Si le mot est bon, on sort de la boucle
 				} else {
 					w.Attempts -= 2 // sinon perd 2 vies
 					fmt.Println("Not present in the word, " + strconv.Itoa(w.Attempts) + " attemps remaining")
-					Affiche(9 - w.Attempts) // On affiche le pendu
+					if w.Attempts < 0 {
+					} else {
+						Affiche(9 - w.Attempts) // On affiche le pendu
+					}
 				}
 			}
 			fmt.Println(strings.ToUpper(AfficheRune(w.Word_runes))) // Affiche le mot avec les lettres trouvées
