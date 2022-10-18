@@ -55,6 +55,7 @@ func (w *Word) Play() {
 			if len(input.Text()) == 1 { // Si la l'entrée est une lettre
 				letter = rune(strings.ToLower(input.Text())[0]) // Converti la lettre en rune
 				w.Check_letter(letter)                          // Verifie si la lettre est dans le mot
+				w.Letter_used = append(w.Letter_used, letter)   // On ajoute la lettre dans le slice des lettres utilisées
 			} else if len(input.Text()) > 1 { // Si la longueur de l'entrée est supérieur à 1
 				if w.Check_word(strings.ToLower(input.Text())) { // Verifie si le mot est le bon
 					fmt.Println("Congrat !")
