@@ -15,12 +15,13 @@ type Word struct { // Structure du mot à trouver
 	Attempts         int
 	HangmanPositions [10]string
 	Letter_used      []rune
+	Alpha_letter     string
 }
 
 // infinite loop to play the game until the player wins or loses
 func (w *Word) Play() {
 	fmt.Println("Good Luck, you have 10 attempts.")
-	fmt.Println(strings.ToUpper(AfficheRune(w.Word_runes)))
+	w.AfficheRune(w.Word_runes)
 	fmt.Print("\n")
 	for {
 		if w.Attempts < 0 { // Si le joueur n'a plus d'essais il perd
@@ -57,7 +58,7 @@ func (w *Word) Play() {
 					}
 				}
 			}
-			fmt.Println(strings.ToUpper(AfficheRune(w.Word_runes))) // Affiche le mot avec les lettres trouvées
+			w.AfficheRune(w.Word_runes) // Affiche le mot avec les lettres trouvées
 			fmt.Print("\n")
 		}
 	}
