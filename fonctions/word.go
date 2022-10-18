@@ -14,7 +14,7 @@ type Word struct { // Structure du mot à trouver
 	N                int
 	Attempts         int
 	HangmanPositions [10]string
-	OS               string
+	Letter_used      []rune
 }
 
 // Choose n random letters in a slice of runes
@@ -54,7 +54,7 @@ func (w *Word) Play() {
 			fmt.Print("\n")
 			if len(input.Text()) == 1 { // Si la l'entrée est une lettre
 				letter = rune(strings.ToLower(input.Text())[0]) // Converti la lettre en rune
-				w.Check_letter(letter)         // Verifie si la lettre est dans le mot
+				w.Check_letter(letter)                          // Verifie si la lettre est dans le mot
 			} else if len(input.Text()) > 1 { // Si la longueur de l'entrée est supérieur à 1
 				if w.Check_word(strings.ToLower(input.Text())) { // Verifie si le mot est le bon
 					fmt.Println("Congrat !")
