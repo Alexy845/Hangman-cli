@@ -57,11 +57,12 @@ func (w *Word) Play() {
 			if len(input.Text()) == 1 {
 				w.Check_letter(letter) // Verifie si la lettre est dans le mot
 			} else if len(input.Text()) > 1 {
-				if input.Text() == w.The_word {
+				if w.Check_word() {
+					fmt.Println('V') //86
 					fmt.Println("Congrat !")
 					fmt.Println("The word was", w.The_word)
-					break
 				} else {
+					fmt.Println('F') //70
 					fmt.Println("Not present in the word, " + strconv.Itoa(w.Attempts) + " attemps remaining")
 					w.Attempts -= 2
 					Affiche(9 - w.Attempts)
