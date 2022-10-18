@@ -57,7 +57,7 @@ func (w *Word) Play() {
 			if len(input.Text()) == 1 {
 				w.Check_letter(letter) // Verifie si la lettre est dans le mot
 			} else if len(input.Text()) > 1 {
-				if w.Check_word() {
+				if w.Check_word(input.Text()) { // Verifie si le mot est le bon
 					fmt.Println('V') //86
 					fmt.Println("Congrat !")
 					fmt.Println("The word was", w.The_word)
