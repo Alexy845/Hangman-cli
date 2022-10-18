@@ -14,6 +14,7 @@ type Word struct { // Structure du mot à trouver
 	N                int
 	Attempts         int
 	HangmanPositions [10]string
+	OS               string
 }
 
 // Choose n random letters in a slice of runes

@@ -2,38 +2,31 @@ package hangman
 
 import (
 	"fmt"
-	"log"
-	"os"
-	"strings"
 )
 
-// Create the Hangman Affiche
+// Créer l'affichage du pendu
 func Affiche(index int) {
-	file, err := os.ReadFile("asset/hangman.txt")
-	if err != nil {
-		log.Fatal(err)
+	hangman := Open_file("asset/hangman.txt", "\n") // Création d'un tableau de string avec les lignes du fichier
+	min := 0                                        // Index de début
+	max := 8                                        // Index de fin
+	for i := 0; i < index; i++ {                    // Boucle pour afficher les lignes du pendu
+		min += 8 // Incrémentation de l'index de début
+		max += 8 // Incrémentation de l'index de fin
 	}
-	hangman := []string(strings.Split(string(file), "\n"))
-	min := 0
-	max := 8
-	for i := 0; i < index; i++ {
-		min += 8
-		max += 8
-	}
-	for i := min; i < max; i++ {
-		fmt.Println(hangman[i])
+	for i := min; i < max; i++ { // Boucle pour afficher les lignes du pendu
+		fmt.Println(hangman[i]) // Affiche la ligne
 	}
 }
 
-//  Affiche the slice of rune in a string
+// Converti le slice de runes en string
 func AfficheRune(runes []rune) string {
-	str := ""
-	for _, r := range runes {
-		if r == 0 {
-			str += "_"
-		} else {
-			str += string(r)
+	str := ""                 // Création d'une string vide
+	for _, r := range runes { // Boucle pour convertir le slice de runes en string
+		if r == 0 { // Si le caractère est égal à 0
+			str += "_" // On ajoute un underscore
+		} else { // Sinon
+			str += string(r) // On ajoute le caractère
 		}
 	}
-	return str
+	return str // Retourne la string
 }
