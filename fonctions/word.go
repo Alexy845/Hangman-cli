@@ -21,9 +21,10 @@ type Word struct { // Structure du mot à trouver
 func (w *Word) Play() {
 	fmt.Println("Good Luck, you have 10 attempts.")
 	fmt.Println(strings.ToUpper(AfficheRune(w.Word_runes)))
+	fmt.Println(len("é"))
 	fmt.Print("\n")
 	for {
-		if w.Attempts == 0 { // Si le joueur n'a plus d'essais il perd
+		if w.Attempts < 0 { // Si le joueur n'a plus d'essais il perd
 			fmt.Println("You lost !")
 			fmt.Println("The word was", w.The_word)
 			return // On sort de la boucle
@@ -38,25 +39,21 @@ func (w *Word) Play() {
 			input.Scan()                        // Lance le scan
 			fmt.Println("Choose : " + strings.ToUpper(input.Text()))
 			fmt.Print("\n")
-			if len(input.Text()) == 1 { // Si la l'entrée est une lettre
-				letter = rune(strings.ToLower(input.Text())[0]) // Converti la lettre en rune
-				AlphaSort(w.Letter_used)
-				if w.Is_used(letter) {       			
-					fmt.Println(strings.ToUpper(input.Text()) + " is already used like : " + strings.ToUpper(string(w.Letter_used)))
-				} else {
-				w.Letter_used = append(w.Letter_used, (letter)) // On ajoute la lettre dans le slice des lettres utilisées
-				}
-				w.Check_letter(letter)                        // Verifie si la lettre est dans le mot				
-			} else if len(input.Text()) > 1 { // Si la longueur de l'entrée est supérieur à 1
-				if input.Text() == "STOP" || input.Text() == "stop" {
+			str := Convert_string_with_accent_to_string(input.Text())
+			if len(str) == 1 { // Si la l'entrée est une lettre
+				letter = rune(strings.ToLower(str)[0])        // Converti la lettre en rune
+				w.Check_letter(letter)                        // Verifie si la lettre est dans le mot
+				w.Letter_used = append(w.Letter_used, letter) // On ajoute la lettre dans le slice des lettres utilisées
+			} else if len(str) > 1 { // Si la longueur de l'entrée est supérieur à 1
+				if str == "STOP" || str == "stop" {
 					Save(*w)
 					return
 				}
-				if w.Check_word(strings.ToLower(input.Text())) { // Verifie si le mot est le bon
+				if w.Check_word(strings.ToLower(str)) { // Verifie si le mot est le bon
 					fmt.Println("Congrat !")
 					fmt.Println("The word was", w.The_word)
 					return // Si le mot est bon, on sort de la boucle
-				} else { 
+				} else {
 					w.Attempts -= 2 // sinon perd 2 vies
 					fmt.Println("Not present in the word, " + strconv.Itoa(w.Attempts) + " attemps remaining")
 					Affiche(9 - w.Attempts) // On affiche le pendu
