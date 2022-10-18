@@ -4,10 +4,9 @@ import (
 	"log"
 	"os"
 	"strings"
-
 )
 
-// Open a file and split words with a separator
+// Ouvre le fichie et retourne un tableau de string couper par les sauts de ligne
 func Open_file(f string, sep string) []string {
 	file, err := os.ReadFile(f)
 	if err != nil {

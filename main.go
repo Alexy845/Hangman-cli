@@ -5,6 +5,7 @@ import (
 	hangman "hangman/fonctions"
 	"log"
 	"os"
+	"runtime"
 )
 
 func main() {
@@ -19,9 +20,17 @@ func main() {
 		}
 		word := hangman.Word{The_word: hangman.Rand_word(dico), Word_runes: []rune{}, N: 0, Attempts: 10} // Création de l'objet Word
 		word.N = len(word.The_word)/2 - 1                                                                 // Nombre de lettres à trouver
-		word.Word_runes = make([]rune, len(word.The_word))                                                // Création d'un slice de rune de la taille du mot à trouver
-		word.Rand_letters()                                                                               // Rempli le tableau de runes avec des lettres aléatoires
-		word.Play()                                                                                       // Début du jeu
+		os := runtime.GOOS
+		switch os {
+		case "windows":
+			word.Word_runes = make([]rune, len(word.The_word)-1) // Création d'un slice de rune de la taille du mot à trouver (Windows)
+		case "linux":
+			word.Word_runes = make([]rune, len(word.The_word)) // Création d'un slice de rune de la taille du mot à trouver (Linux)
+		default:
+			word.Word_runes = make([]rune, len(word.The_word)) // Création d'un slice de rune de la taille du mot à trouver (Autre OS)
+		}
+		word.Rand_letters() // Rempli le tableau de runes avec des lettres aléatoires
+		word.Play()         // Début du jeu
 	default: // Si il y a plus d'un argument
 		fmt.Print("Too many arguments !")
 	}
