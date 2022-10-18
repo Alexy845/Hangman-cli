@@ -12,6 +12,7 @@ func (w *Word) Check_letter(letter rune) {
 		for i := 0; i < len(w.The_word); i++ { // Pour chaque lettre du mot
 			if rune(w.The_word[i]) == letter { // Si la lettre est égale à la lettre entrée
 				w.Word_runes = Replace_rune(w.Word_runes, letter, i) // On remplace la lettre dans le slice
+				w.Letter_used = append(w.Letter_used, letter)        // On ajoute la lettre dans le slice des lettres utilisées
 			}
 		}
 	} else { // Si la lettre n'est pas dans le mot
