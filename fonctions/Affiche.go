@@ -2,6 +2,7 @@ package hangman
 
 import (
 	"fmt"
+	"strings"
 )
 
 // Créer l'affichage du pendu
@@ -19,16 +20,26 @@ func Affiche(index int) {
 }
 
 // Converti le slice de runes en string
-func AfficheRune(runes []rune) string {
-	str := ""                 // Création d'une string vide
+func (w Word) AfficheRune(runes []rune) {
+	str := [][]string{}       // Création d'une string vide
 	for _, r := range runes { // Boucle pour convertir le slice de runes en string
 		if r == 0 { // Si le caractère est égal à 0
-			str += "_" // On ajoute un underscore
+			str = append(str, strings.Split(Print_letter(0), "\n")) // On ajoute un underscore
 		} else { // Sinon
-			str += string(r) // On ajoute le caractère
+			str = append(str, strings.Split(Print_letter(strings.Index(w.Alpha_letter, string(r))+1), "\n")) // On ajoute le caractère
 		}
 	}
-	return str // Retourne la string
+	fmt.Println(str[0][0])
+	str1 := ""
+	for i := 0; i < len(w.Word_runes); i++ {
+		for j := 0; j < len(str[i]); j++ {
+			for _, s := range str {
+				str1 += s[j]
+			}
+			fmt.Println(str1)
+			str1 = ""
+		}
+	}
 }
 
 func Print_lose() {
@@ -53,4 +64,9 @@ func Print_win() {
 		"|\\___/ /        \\|_______|\\|_______|        \\|____________|\\|__|\\|__| \\|__|           ___ \n" +
 		"\\|___|/                                                                              |\\__\\\n" +
 		"                                                                                     \\|__|\n")
+}
+
+func Print_letter(index int) string {
+	file := Open_file("asset/standard.txt", "SEP")
+	return file[index]
 }
