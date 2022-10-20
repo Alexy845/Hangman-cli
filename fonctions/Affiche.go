@@ -2,6 +2,7 @@ package hangman
 
 import (
 	"fmt"
+	"os"
 	"strings"
 )
 
@@ -21,25 +22,36 @@ func Affiche(index int) {
 
 // Converti le slice de runes en string
 func (w Word) AfficheRune(runes []rune) {
-	str := [][]string{}       // Création d'une string vide
+	str := make([]string, 9)  // Création d'une string vide
 	for _, r := range runes { // Boucle pour convertir le slice de runes en string
 		if r == 0 { // Si le caractère est égal à 0
-			str = append(str, strings.Split(Print_letter(0), "\n")) // On ajoute un underscore
-		} else { // Sinon
-			str = append(str, strings.Split(Print_letter(strings.Index(w.Alpha_letter, string(r))+1), "\n")) // On ajoute le caractère
-		}
-	}
-	fmt.Println(str[0][0])
-	str1 := ""
-	for i := 0; i < len(w.Word_runes); i++ {
-		for j := 0; j < len(str[i]); j++ {
-			for _, s := range str {
-				str1 += s[j]
+			for i, line := range Print_letter('_') {
+				str[i] = str[i] + line
 			}
-			fmt.Println(str1)
-			str1 = ""
+			//str = append(str, Print_letter(0)) // On ajoute un underscore
+		} else { // Sinon
+			//str = append(str, Print_letter(strings.Index(w.Alpha_letter, string(r))+1)) // On ajoute le caractère
+			for i, line := range Print_letter(int(r)) {
+				str[i] = str[i] + line
+			}
 		}
 	}
+	//str1 := ""
+	// for j := 0; j < 7; j++ {
+	/*for _, s := range str {
+		//if len(strings.Split(s, "\n")) > j {
+		//	//str1 += strings.Trim(s[j], "\n")
+		//	fmt.Print(strings.Split(s, "\n")[j])
+		//}
+		//fmt.Print(s)
+	}*/
+
+	for _, line := range str {
+		println(line)
+	}
+	//fmt.Println() //str1
+	//str1 = ""
+	// }
 }
 
 func Print_lose() {
@@ -66,7 +78,20 @@ func Print_win() {
 		"                                                                                     \\|__|\n")
 }
 
-func Print_letter(index int) string {
-	file := Open_file("asset/standard.txt", "SEP")
-	return file[index]
+func Print_letter(index int) []string {
+	current_min := 9 * (index - 32)
+	current_max := current_min + 9
+	content, _ := os.ReadFile("asset/standard.txt")
+	strcontent := strings.Split(string(content), "\n")
+	ascii := []string{}
+	for i := current_min; i < current_max; i++ {
+		line := ""
+		for _, r := range strcontent[i] {
+			if r >= 32 && r < 127 {
+				line += string(r)
+			}
+		}
+		ascii = append(ascii, line)
+	}
+	return ascii
 }
