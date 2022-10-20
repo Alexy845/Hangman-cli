@@ -24,11 +24,11 @@ func Affiche(index int) {
 func (w Word) AfficheRune(runes []rune) {
 	str := make([]string, 9)  // Création d'une string vide
 	for _, r := range runes { // Boucle pour convertir le slice de runes en string
-		if r == 0 { // Si le caractère est égal à 0
+		if r == 0 {
 			for i, line := range Print_letter('_') {
 				str[i] = str[i] + line
 			}
-		} else { // Sinon
+		} else {
 			for i, line := range Print_letter(int(r)) {
 				str[i] = str[i] + line
 			}
