@@ -24,7 +24,7 @@ func (w *Word) Play() {
 	w.AfficheRune(w.Word_runes)
 	fmt.Print("\n")
 	for {
-		if w.Attempts < 0 { // Si le joueur n'a plus d'essais il perd
+		if w.Attempts <= 0 { // Si le joueur n'a plus d'essais il perd
 			Print_lose()
 			fmt.Println("The word was", w.The_word)
 			return // On sort de la boucle
@@ -41,14 +41,14 @@ func (w *Word) Play() {
 			fmt.Println("Choose : " + strings.ToUpper(str))
 			fmt.Print("\n")
 			if len(str) == 1 { // Si la l'entrée est une lettre
-				letter = rune(strings.ToLower(str)[0])        // Converti la lettre en rune
+				letter = rune(strings.ToLower(str)[0]) // Converti la lettre en rune
 				AlphaSort(w.Letter_used)
-				if w.Is_used(letter) {       			
+				if w.Is_used(letter) {
 					fmt.Println(strings.ToUpper(input.Text()) + " is already used like : " + strings.ToUpper(string(w.Letter_used)))
 				} else {
-				w.Letter_used = append(w.Letter_used, (letter)) // On ajoute la lettre dans le slice des lettres utilisées
+					w.Letter_used = append(w.Letter_used, (letter)) // On ajoute la lettre dans le slice des lettres utilisées
 				}
-				w.Check_letter(letter)                        // Verifie si la lettre est dans le mot
+				w.Check_letter(letter) // Verifie si la lettre est dans le mot
 			} else if len(str) > 1 { // Si la longueur de l'entrée est supérieur à 1
 				if str == "STOP" {
 					Save(*w)
