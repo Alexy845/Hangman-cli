@@ -47,12 +47,16 @@ func (w *Word) Play() {
 				w.Check_letter(letter)                        // Verifie si la lettre est dans le mot
 				w.Letter_used = append(w.Letter_used, letter) // On ajoute la lettre dans le slice des lettres utilisées
 			} else if len(str) > 1 { // Si la longueur de l'entrée est supérieur à 1
+				if str == "STOP" || str == "stop" {
+					Save(*w)
+					return
+				}
 				if w.Check_word(strings.ToLower(str)) { // Verifie si le mot est le bon
 					Print_win()
 					fmt.Println("The word was", w.The_word)
 					return // Si le mot est bon, on sort de la boucle
-				} else { // Sinon on perd une vie
-					w.Attempts -= 2 // On perd 2 vies
+				} else {
+					w.Attempts -= 2 // sinon perd 2 vies
 					fmt.Println("Not present in the word, " + strconv.Itoa(w.Attempts) + " attemps remaining")
 					if w.Attempts < 0 {
 					} else {

@@ -28,30 +28,15 @@ func (w Word) AfficheRune(runes []rune) {
 			for i, line := range Print_letter('_') {
 				str[i] = str[i] + line
 			}
-			//str = append(str, Print_letter(0)) // On ajoute un underscore
 		} else { // Sinon
-			//str = append(str, Print_letter(strings.Index(w.Alpha_letter, string(r))+1)) // On ajoute le caractère
 			for i, line := range Print_letter(int(r)) {
 				str[i] = str[i] + line
 			}
 		}
 	}
-	//str1 := ""
-	// for j := 0; j < 7; j++ {
-	/*for _, s := range str {
-		//if len(strings.Split(s, "\n")) > j {
-		//	//str1 += strings.Trim(s[j], "\n")
-		//	fmt.Print(strings.Split(s, "\n")[j])
-		//}
-		//fmt.Print(s)
-	}*/
-
 	for _, line := range str {
 		println(line)
 	}
-	//fmt.Println() //str1
-	//str1 = ""
-	// }
 }
 
 func Print_lose() {
@@ -77,7 +62,6 @@ func Print_win() {
 		"\\|___|/                                                                              |\\__\\\n" +
 		"                                                                                     \\|__|\n")
 }
-
 func Print_letter(index int) []string {
 	current_min := 9 * (index - 32)
 	current_max := current_min + 9
