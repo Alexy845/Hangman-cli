@@ -20,7 +20,6 @@ type Word struct { // Structure du mot à trouver
 // infinite loop to play the game until the player wins or loses
 func (w *Word) Play() {
 	fmt.Println("Good Luck, you have 10 attempts.")
-	fmt.Println(w.The_word)
 	fmt.Println(strings.ToUpper(AfficheRune(w.Word_runes)))
 	fmt.Print("\n")
 	for {
@@ -49,6 +48,10 @@ func (w *Word) Play() {
 				}
 				w.Check_letter(letter)                        // Verifie si la lettre est dans le mot				
 			} else if len(input.Text()) > 1 { // Si la longueur de l'entrée est supérieur à 1
+				if input.Text() == "STOP" || input.Text() == "stop" {
+					Save(*w)
+					return
+				}
 				if w.Check_word(strings.ToLower(input.Text())) { // Verifie si le mot est le bon
 					fmt.Println("Congrat !")
 					fmt.Println("The word was", w.The_word)
