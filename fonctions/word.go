@@ -21,8 +21,6 @@ type Word struct { // Structure du mot à trouver
 // infinite loop to play the game until the player wins or loses
 func (w *Word) Play() {
 	fmt.Println("Good Luck, you have 10 attempts.")
-	fmt.Println(w.The_word)
-	fmt.Println(w.Word_runes)
 	w.AfficheRune(w.Word_runes)
 	fmt.Print("\n")
 	for {
