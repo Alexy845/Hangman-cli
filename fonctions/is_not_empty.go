@@ -17,6 +17,3 @@ func Is_not_empty () bool {
 	}
 	return false
 }
-	//var elements_save = []byte(`{"The_word":"","Word_runes":[],"N":3,"Attempts":10,"HangmanPositions":[],"Letter_used":[]}`)
-	//https://stackoverflow.com/questions/24770403/write-struct-to-json-file-using-struct-fields-not-json-keys
-	//err1 := json.Unmarshal(elements_save, &word)
