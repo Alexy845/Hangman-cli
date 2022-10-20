@@ -42,8 +42,13 @@ func (w *Word) Play() {
 			fmt.Print("\n")
 			if len(str) == 1 { // Si la l'entrée est une lettre
 				letter = rune(strings.ToLower(str)[0])        // Converti la lettre en rune
+				AlphaSort(w.Letter_used)
+				if w.Is_used(letter) {       			
+					fmt.Println(strings.ToUpper(input.Text()) + " is already used like : " + strings.ToUpper(string(w.Letter_used)))
+				} else {
+				w.Letter_used = append(w.Letter_used, (letter)) // On ajoute la lettre dans le slice des lettres utilisées
+				}
 				w.Check_letter(letter)                        // Verifie si la lettre est dans le mot
-				w.Letter_used = append(w.Letter_used, letter) // On ajoute la lettre dans le slice des lettres utilisées
 			} else if len(str) > 1 { // Si la longueur de l'entrée est supérieur à 1
 				if str == "STOP" {
 					Save(*w)
