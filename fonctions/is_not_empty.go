@@ -5,7 +5,7 @@ import (
 	"io/ioutil"
 )
 
-// Verifie s'il y a une sauvegarde
+// Check if there is a save
 func Is_not_empty () bool {
 	save, err := ioutil.ReadFile(".\\asset\\save.txt")
 	if err != nil {

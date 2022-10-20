@@ -6,24 +6,24 @@ import (
 	"strings"
 )
 
-// Créer l'affichage du pendu
+// Hangman display
 func Affiche(index int) {
-	hangman := Open_file("asset/hangman.txt", "\n") // Création d'un tableau de string avec les lignes du fichier
-	min := 0                                        // Index de début
-	max := 8                                        // Index de fin
-	for i := 0; i < index; i++ {                    // Boucle pour afficher les lignes du pendu
-		min += 8 // Incrémentation de l'index de début
-		max += 8 // Incrémentation de l'index de fin
+	hangman := Open_file("asset/hangman.txt", "\n")
+	min := 0
+	max := 8
+	for i := 0; i < index; i++ {
+		min += 8
+		max += 8
 	}
-	for i := min; i < max; i++ { // Boucle pour afficher les lignes du pendu
-		fmt.Println(hangman[i]) // Affiche la ligne
+	for i := min; i < max; i++ {
+		fmt.Println(hangman[i])
 	}
 }
 
-// Converti le slice de runes en string
+// Convert slice of runes into string
 func (w Word) AfficheRune(runes []rune) {
-	str := make([]string, 9)  // Création d'une string vide
-	for _, r := range runes { // Boucle pour convertir le slice de runes en string
+	str := make([]string, 9)
+	for _, r := range runes {
 		if r == 0 {
 			for i, line := range Print_letter('_') {
 				str[i] = str[i] + line
@@ -62,6 +62,7 @@ func Print_win() {
 		"\\|___|/                                                                              |\\__\\\n" +
 		"                                                                                     \\|__|\n")
 }
+// Get the letter from the file
 func Print_letter(index int) []string {
 	current_min := 9 * (index - 32)
 	current_max := current_min + 9

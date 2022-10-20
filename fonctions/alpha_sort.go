@@ -1,5 +1,6 @@
 package hangman
 
+// Arrange in alphabetical order
 func AlphaSort(str []rune,) {
     for x := range str {
         y := x + 1

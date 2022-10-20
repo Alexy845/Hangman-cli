@@ -6,7 +6,7 @@ import (
 	"io/ioutil"
 	"os"
 )
-
+// Make a save of the game in a file
 func Save(w Word) {
 	_, err := os.OpenFile(".\\asset\\save.txt", os.O_CREATE, 0600) 
 	if err != nil {            

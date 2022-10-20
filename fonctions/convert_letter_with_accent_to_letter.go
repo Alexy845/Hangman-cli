@@ -1,6 +1,6 @@
 package hangman
 
-// Convertit une lettre avec accent en lettre sans accent
+// Convert a letter with accent to a letter without accent
 func Convert_letter_with_accent_to_letter(letter rune) rune {
 	switch letter {
 	case 'à':
@@ -38,7 +38,7 @@ func Convert_letter_with_accent_to_letter(letter rune) rune {
 	}
 }
 
-// Convertit un string contenant des accents en string sans accent
+// Convert a string containing accents to a string without accent
 func Convert_string_with_accent_to_string(s string) string {
 	var result string
 	for _, letter := range s {

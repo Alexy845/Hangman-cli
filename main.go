@@ -10,21 +10,21 @@ import (
 )
 
 func main() {
-	switch len(os.Args) { // Vérifie le nombre d'arguments passés au programme (doit être égal à 2)
-	case 1: // Si il n'y a pas d'arguments
+	switch len(os.Args) {
+	case 1: // If there isn't args
 		fmt.Print("Please enter dictionary file")
-		return // On sort du programme
-	case 2: // Si il y a un argument
-		dico := os.Args[1] // Récupère le nom du fichier dictionnaire
+		return
+	case 2: // If there is one arg = normal game 
+		dico := os.Args[1]
 		if _, err := os.Stat(os.Args[1]); err != nil {
-			log.Fatal(err) // Vérifie que le fichier existe
+			log.Fatal(err)
 		}
 		word := hangman.Word{The_word: hangman.Rand_word(dico), Word_runes: []rune{}, N: 0, Attempts: 10, Letter_used: []rune{}, Alpha_letter: "abcdefghijklmnopqrstuvwxyz"} // Création de l'objet Word
 		word.N = len(word.The_word)/2 - 1                                                                                                                                    // Nombre de lettres à trouver
 		word.Word_runes = make([]rune, len(word.The_word))                                                                                                                   // Création d'un slice de rune de la taille du mot à trouver (Linux)
 		word.Rand_letters()                                                                                                                                                  // Rempli le tableau de runes avec des lettres aléatoires
 		word.Play()
-	case 3 :
+	case 3 : // If there is 2 args = game from save.txt
 		if os.Args[1] == "--startWith" {
 			if os.Args[2] == "save.txt" {
 				if hangman.Is_not_empty() {
@@ -43,7 +43,7 @@ func main() {
 				}
 			}
 		}
-	default: // Si il y a plus d'un argument
+	default: // If there is 3 args or more
 		fmt.Print("Too many arguments !")
 	}
 }

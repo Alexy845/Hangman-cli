@@ -1,6 +1,6 @@
 package hangman
 
-// Vérifie si la lettre a déjà été utilisée
+// Check if the letter was already used 
 func (w *Word) Is_used(letter rune) bool {
 	for _, l := range w.Letter_used {
 		if l == letter {

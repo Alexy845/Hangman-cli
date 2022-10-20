@@ -5,7 +5,7 @@ import (
 	"time"
 )
 
-// Nombre aléatoire dans un intervalle
+// Generate a random int
 func Rand_range(min int, max int) int {
 	rand.Seed(time.Now().UnixNano())
 	return rand.Intn(max-min) + min
