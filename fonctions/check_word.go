@@ -2,5 +2,5 @@ package hangman
 
 // Vérifie si le mot est trouvé
 func (w *Word) Check_word(input string) bool {
-	return w.The_word == input // Retourne vrai si le mot est trouvé et faux sinon
+	return w.The_word == input
 }

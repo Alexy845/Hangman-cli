@@ -12,7 +12,7 @@ func Save(w Word) {
 	if err != nil {            
 		panic(err) 
 	}
-	objects_save := w //[]string{w.The_word, w.Word_runes, w.N, w.Attempts, w.HangmanPositions, w.Letter_used}
+	objects_save := w
 	save, err := json.Marshal(objects_save)
      
     if err != nil {
