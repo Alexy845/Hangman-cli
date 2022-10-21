@@ -20,7 +20,6 @@ type Word struct { // Struct of the word
 
 // Infinite loop to play the game until the player wins or loses
 func (w *Word) Play() {
-	fmt.Println("Good Luck, you have 10 attempts.")
 	w.AfficheRune(w.Word_runes)
 	fmt.Print("\n")
 	for {
@@ -52,6 +51,7 @@ func (w *Word) Play() {
 			} else if len(str) > 1 { // Save the game
 				if str == "STOP" {
 					Save(*w)
+					fmt.Println("Game saved in save.txt")
 					return
 				}
 				if w.Check_word(strings.ToLower(str)) { // Check if the word is correct

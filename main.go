@@ -7,6 +7,7 @@ import (
 	"io/ioutil"
 	"log"
 	"os"
+	"strconv"
 )
 
 func main() {
@@ -22,7 +23,8 @@ func main() {
 		word := hangman.Word{The_word: hangman.Rand_word(dico), Word_runes: []rune{}, N: 0, Attempts: 10, Letter_used: []rune{}, Alpha_letter: "abcdefghijklmnopqrstuvwxyz"} // Création de l'objet Word
 		word.N = len(word.The_word)/2 - 1                                                                                                                                    // Nombre de lettres à trouver
 		word.Word_runes = make([]rune, len(word.The_word))                                                                                                                   // Création d'un slice de rune de la taille du mot à trouver (Linux)
-		word.Rand_letters()                                                                                                                                                  // Rempli le tableau de runes avec des lettres aléatoires
+		word.Rand_letters()
+		fmt.Println("Good Luck, you have 10 attempts.")                                                                                                                                               // Rempli le tableau de runes avec des lettres aléatoires
 		word.Play()
 	case 3 : // If there is 2 args = game from save.txt
 		if os.Args[1] == "--startWith" {
@@ -37,6 +39,7 @@ func main() {
 					if err != nil {
 						panic(err)
 					}
+					fmt.Println("Welcome Back, you have : " + strconv.Itoa(object_save.Attempts) + " attemps remaining")
 					object_save.Play()
 				} else {
 					fmt.Println("No save found ")
