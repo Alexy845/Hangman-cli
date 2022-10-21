@@ -1,4 +1,5 @@
-# Projet HANGMAN
+# <div style="text-align: center"> Projet HANGMAN</div>
+
 
 ## Sommaire :
 
@@ -39,7 +40,7 @@ go run main.go --startWith asset/save.txt
 ```
 
 ## Quelques Images du jeu
-
+![damn](images/damn-sarcasm.gif)
 <div style="text-align: justify"> Voici quelques images du jeu : </div>
 
 ### <div style="text-align: justify"> - Lancement du jeu : </div>
@@ -53,7 +54,6 @@ go run main.go --startWith asset/save.txt
 ### <div style="text-align: justify"> - Gagner la partie </div>
 
 ![Gagner la partie](images/win.png)
-
 ### <div style="text-align: justify"> - Perdre la partie </div>
 
 ![Perdre la partie](images/lose.png)
