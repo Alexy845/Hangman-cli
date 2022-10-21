@@ -1,4 +1,5 @@
-#!/bin/bash
+#!/bin/sh -x
+@echo off
 
 start_mode_normal() {
     echo "Starting in normal mode"
