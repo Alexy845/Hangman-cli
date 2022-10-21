@@ -44,7 +44,7 @@ func (w *Word) Play() {
 			if len(str) == 1 {
 				letter = rune(strings.ToLower(str)[0])
 				AlphaSort(w.Letter_used)
-				if w.Hard {
+				if w.Hard { // Hard mode active
 					if w.Is_used(letter) {
 						fmt.Println("You have already used this letter, you have ", w.Attempts, " attempts remaining")
 					} else {
