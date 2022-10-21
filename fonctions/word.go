@@ -44,13 +44,20 @@ func (w *Word) Play() {
 			if len(str) == 1 {
 				letter = rune(strings.ToLower(str)[0])
 				AlphaSort(w.Letter_used)
+
 				if w.Hard { // Hard mode active
 					if w.Is_used(letter) {
+						w.Attempts --
 						fmt.Println("You have already used this letter, you have ", w.Attempts, " attempts remaining")
 					} else {
 						w.Letter_used = append(w.Letter_used, letter)
 						w.Check_letter(letter)
+						w.Check_voyelle() 
 					}
+
+
+
+				// normal mode
 				} else if w.Is_used(letter) { // Check if the letter has already been said
 					fmt.Println(strings.ToUpper(input.Text()) + " is already used like : " + strings.ToUpper(string(w.Letter_used)))
 				} else {

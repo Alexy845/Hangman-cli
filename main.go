@@ -36,7 +36,7 @@ func main() {
 			word.N = len(word.The_word)/3 - 1
 			word.Word_runes = make([]rune, len(word.The_word))
 			word.Rand_letters()
-			fmt.Println("Good Luck, you have 5 attempts.")
+			fmt.Println("Good Luck, you have 10 attempts.")
 			word.Play()
 		} else {
 			fmt.Println("Please enter a valid argument")
