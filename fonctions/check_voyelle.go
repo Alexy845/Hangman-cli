@@ -2,6 +2,7 @@ package hangman
 
 import "fmt"
 
+// Vowel management
 func (w *Word) Check_voyelle() {
 	if w.Letter_used[len(w.Letter_used)-1] == 'a' || w.Letter_used[len(w.Letter_used)-1] == 'e' || w.Letter_used[len(w.Letter_used)-1] == 'i' || w.Letter_used[len(w.Letter_used)-1] == 'o' || w.Letter_used[len(w.Letter_used)-1] == 'u' || w.Letter_used[len(w.Letter_used)-1] == 'y' {
 		for j := range w.Voyelle_used {
