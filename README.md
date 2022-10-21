@@ -1,6 +1,6 @@
 # Projet HANGMAN
 
-## Somaire :
+## Sommaire :
 
 * [Description](#Description)
 * [La base du projet](#La-base-du-projet)
@@ -16,7 +16,7 @@
 <div style="text-align: justify"> Le projet est composé de 3 parties : </div>
 <div style="text-align: justify"> - Le fichier main.go qui contient l'initialisation du jeu. </div>
 <div style="text-align: justify"> - Le dossier fonctions qui contient les fonctions du jeu. </div>
-<div style="text-align: justify"> - Le dossier asset qui contient les fichier textes contenant les mots utilisés par le jeu, le ASCII Art du hangman, le fichier les lettres en ASCII Art et un fichier save pour pouvoir sauvegarder sa progression. </div>
+<div style="text-align: justify"> - Le dossier asset qui contient les fichiers textes contenant les mots utilisés par le jeu, l'ASCII Art du hangman, le fichier les lettres en ASCII Art et un fichier save pour pouvoir sauvegarder sa progression. </div>
 
 ## Utilisation
 
