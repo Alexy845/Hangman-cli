@@ -17,11 +17,12 @@ start_with_save (){
     # Start the application
     go run main.go --startWith save.txt
 }
-
-echo "Choose a mode:"
-echo "1. Normal"
-echo "2. Hard"
-echo "3. Start with save"
+echo "___________________________"
+echo "Choose a mode:            |"
+echo "1. Normal                 |"
+echo "2. Hard                   |"
+echo "3. Start with save        |"
+echo "___________________________"
 read -p "Enter your choice: " choice
 
 case $choice in

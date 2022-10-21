@@ -27,7 +27,7 @@ func main() {
 		fmt.Println("Good Luck, you have 10 attempts.")
 		word.Play()
 	case 3: // If there is 2 args = game from save.txt or --hard flags
-		if os.Args[1] == "--hard" { // Hard mode 
+		if os.Args[1] == "--hard" { // Hard mode
 			dico := os.Args[2]
 			if _, err := os.Stat(os.Args[2]); err != nil {
 				log.Fatal(err)
@@ -46,12 +46,12 @@ func main() {
 				if hangman.Is_not_empty() {
 					var jsonS, err = ioutil.ReadFile(".\\asset\\" + os.Args[2])
 					if err != nil {
-						panic(err)
+						log.Fatal(err)
 					}
 					var object_save hangman.Word
 					err = json.Unmarshal([]byte(jsonS), &object_save)
 					if err != nil {
-						panic(err)
+						log.Fatal(err)
 					}
 					fmt.Println("Welcome Back, you have : " + strconv.Itoa(object_save.Attempts) + " attemps remaining")
 					object_save.Play()
