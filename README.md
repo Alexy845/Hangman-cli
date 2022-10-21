@@ -2,23 +2,23 @@
 
 ## Somaire :
 
-* [Description](#description)
+* [Description](#Description)
 * [La base du projet](#La-base-du-projet)
 * [Utilisation](#utilisation)
 * [Quelques images du jeu](#Quelques-Images-du-jeu)
 
-## I) Description
+## Description
 
 <div style="text-align: justify"> Ce projet est un jeu du pendu en Golang. Le but est de trouver le mot caché en entrant des lettres (ou le mot entier). Si le mot contient la lettre entrée, elle est affichée. Sinon, le joueur perd une vie (ou 2 dans le cas du mot). Le joueur a 10 vies au total. Si le joueur trouve le mot avant de perdre ses 10 vies, il gagne. Sinon, il perd. </div>
 
-## II) La base du projet
+## La base du projet
 
 <div style="text-align: justify"> Le projet est composé de 3 parties : </div>
 <div style="text-align: justify"> - Le fichier main.go qui contient l'initialisation du jeu. </div>
 <div style="text-align: justify"> - Le dossier fonctions qui contient les fonctions du jeu. </div>
 <div style="text-align: justify"> - Le dossier asset qui contient les fichier textes contenant les mots utilisés par le jeu, le ASCII Art du hangman, le fichier les lettres en ASCII Art et un fichier save pour pouvoir sauvegarder sa progression. </div>
 
-## III) Utilisation
+## Utilisation
 
 <div style="text-align: justify"> Pour lancer une nouvelle partie, il faut se placer dans le dossier du projet et lancer la commande suivante : </div>
 
