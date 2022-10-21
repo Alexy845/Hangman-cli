@@ -33,3 +33,4 @@ EXIT /B 0
 echo "Starting with save"
 go "run" "main.go" "--startWith" "save.txt"
 EXIT /B 0
+pause
