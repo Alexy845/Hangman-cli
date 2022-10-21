@@ -16,6 +16,8 @@ type Word struct { // Struct of the word
 	HangmanPositions [10]string
 	Letter_used      []rune
 	Alpha_letter     string
+	Hard             bool
+	Voyelle_used     []rune
 }
 
 // Infinite loop to play the game until the player wins or loses
@@ -42,11 +44,14 @@ func (w *Word) Play() {
 			if len(str) == 1 {
 				letter = rune(strings.ToLower(str)[0])
 				AlphaSort(w.Letter_used)
-				if w.Is_used(letter) { // Check if the letter has already been said
+				if w.Hard {
+					w.Letter_used = append(w.Letter_used, letter)
+					w.Check_letter(letter)
+				} else if w.Is_used(letter) { // Check if the letter has already been said
 					fmt.Println(strings.ToUpper(input.Text()) + " is already used like : " + strings.ToUpper(string(w.Letter_used)))
 				} else {
-				w.Letter_used = append(w.Letter_used, (letter))
-				w.Check_letter(letter)    
+					w.Letter_used = append(w.Letter_used, letter)
+					w.Check_letter(letter)
 				}
 			} else if len(str) > 1 { // Save the game
 				if str == "STOP" {
