@@ -27,7 +27,7 @@ func main() {
 		fmt.Println("Good Luck, you have 10 attempts.")
 		word.Play()
 	case 3: // If there is 2 args = game from save.txt or --hard flags
-		if os.Args[1] == "--hard" {
+		if os.Args[1] == "--hard" { // Hard mode 
 			dico := os.Args[2]
 			if _, err := os.Stat(os.Args[2]); err != nil {
 				log.Fatal(err)
@@ -41,7 +41,7 @@ func main() {
 		} else {
 			fmt.Println("Please enter a valid argument")
 		}
-		if os.Args[1] == "--startWith" {
+		if os.Args[1] == "--startWith" { // Start with save.txt
 			if os.Args[2] == "save.txt" {
 				if hangman.Is_not_empty() {
 					var jsonS, err = ioutil.ReadFile(".\\asset\\" + os.Args[2])
