@@ -32,7 +32,7 @@ func main() {
 			if _, err := os.Stat(os.Args[2]); err != nil {
 				log.Fatal(err)
 			}
-			word := hangman.Word{The_word: hangman.Rand_word(dico), Word_runes: []rune{}, N: 0, Attempts: 5, Letter_used: []rune{}, Alpha_letter: "abcdefghijklmnopqrstuvwxyz", Hard: true}
+			word := hangman.Word{The_word: hangman.Rand_word(dico), Word_runes: []rune{}, N: 0, Attempts: 10, Letter_used: []rune{}, Alpha_letter: "abcdefghijklmnopqrstuvwxyz", Hard: true}
 			word.N = len(word.The_word)/3 - 1
 			word.Word_runes = make([]rune, len(word.The_word))
 			word.Rand_letters()
