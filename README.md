@@ -8,6 +8,8 @@
 * [Utilisation](#utilisation)
     * [Installation](#installation)
     * [Lancement](#lancement)
+* [Fonctionnalités](#fonctionnalités)
+* [Fonctionnalités avancées](#fonctionnalités-avancées-(nécessitant-une-commande))
 * [Quelques images du jeu](#Quelques-Images-du-jeu)
 
 ## Description :
@@ -40,10 +42,19 @@ git clone <url_du_repository>
 go run main.go asset/words.txt
 ```
 
+## Fonctionnalités :
 
-## Fonctionnalités avancées :
+<div style="text-align: justify"> Le programme possède plusieurs fonctionnalités : <br>
+- il est capable de gérer les lettres ayant un accent <br>
+- il transforme toute les lettres en majuscule pour un esthétique uniforme <br>
+- le joueur peut proposer un mot complet ou une lettre (Si le mot est trouvé le jeu s'arrête. Sinon, le compteur de tentatives diminue de 2). (bonus)<br>
+- il peut stockez les lettres suggérées par le joueur afin qu'il ne puisse pas proposer deux fois la même lettre. (si c'est le czs un message s'affiche ainsi que la liste des lettres déjà proposées). (bonus) <br>
+- Il possède un affichage en Ascii-Art afin de rendre l'expérience de jeu plus agréable. (bonus)
 
-<div style="text-align: justify"> Il est possible de sauvegarder une partie afin de la reprendre plus tard. <br>
+
+## Fonctionnalités avancées (nécessitant une commande ):
+
+<div style="text-align: justify"> Il est possible de sauvegarder une partie afin de la reprendre plus tard. (bonus start-and-stop) <br>
 Pour se faire, il faut se placer dans le dossier du projet et lancer la commande suivante pendant le jeu: </div>
 
 ```bash
@@ -55,13 +66,18 @@ STOP
 ```bash
 go run main.go --startWith asset/save.txt
 ```
-<div style="text-align: justify"> Il est possible de lancer une partie en mode hard, il faut se placer dans le dossier et lancer la commande suivante :</div>
+<div style="text-align: justify"> Il est possible de lancer une partie en mode hard et d'avoir ainsi plusieurs contraintes : <br>
+- nombre de lettres révélées réduit <br>
+- pas d'affichage des lettres déjà utilisés par l'utilisateur (si déjà utlisé -1 sur le compteur) <br>
+- pouvoir soumettre seulement 3 voyelles (-1 si une voyelle déjà soumise ou si la limite de 3 est dépassée) <br>
+
+Pour se faire, il faut se placer dans le dossier et lancer la commande suivante :</div>
 
 ```bash
 go run . --hard asset/words.txt
 ```
 
-<div style="text-align: justify">Un menu de démarrage en CLI, regroupant les fonctionnalité précédente, est également disponible via cette commande : </div>
+<div style="text-align: justify">Un menu de démarrage en CLI, regroupant les fonctionnalités précédentes, est également disponible via cette commande : </div>
 
 ```bash
 ./start.sh
