@@ -12,11 +12,12 @@
 
 ## Description :
 
-<div style="text-align: justify"> L'objectif de ce projet est de réaliser un jeu du pendu en Golang. Le but est de trouver le mot caché en entrant des lettres (ou le mot entier) avec un nombre de tentatives limité. Si le mot contient la lettre entrée, elle est affichée. Sinon, le joueur perd une vie (ou 2 dans le cas du mot) et le dessin d'un pendu se met à apparaît. Le joueur a 10 vies au total. S'il trouve le mot avant de perdre ses 10 vies, il gagne. Sinon, il perd et le dessin est terminé. </div>
+<div style="text-align: justify"> L'objectif de ce projet est de réaliser un jeu du pendu en Golang. <br>
+Le but est de trouver le mot caché en entrant des lettres (ou le mot entier) avec un nombre de tentatives limité. Si le mot contient la lettre entrée, elle est affichée. Sinon, le joueur perd une vie (ou 2 dans le cas du mot) et le dessin d'un pendu se met à apparaît. Le joueur a 10 vies au total. S'il trouve le mot avant de perdre ses 10 vies, il gagne. Sinon, il perd et le dessin est terminé. </div>
 
 ## La base du projet :
 
-<div style="text-align: justify"> Le projet est composé de 3 parties : </div>
+<div style="text-align: justify"> Le projet se decompose en  plusieurs parties : </div>
 <div style="text-align: justify"> - Le fichier main.go qui contient l'initialisation du jeu. </div>
 <div style="text-align: justify"> - Le dossier fonctions qui contient les fonctions du jeu ainsi que le fichier word.go </div>
 <div style="text-align: justify"> - Le dossier asset qui contient les fichiers textes contenant les mots utilisés par le jeu, l'ASCII Art du hangman, le fichier les lettres en ASCII Art et un fichier save pour pouvoir sauvegarder sa progression. </div>

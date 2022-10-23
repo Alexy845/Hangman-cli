@@ -1,1 +1,1 @@
-{"The_word":"meuble","Word_runes":[0,0,117,0,108,0],"N":1,"Attempts":8,"HangmanPositions":["","","","","","","","","",""],"Letter_used":[108],"Alpha_letter":"abcdefghijklmnopqrstuvwxyz","Hard":false,"Voyelle_used":null}
+{"The_word":"jeune","Word_runes":[0,101,0,0,101],"N":-1,"Attempts":8,"HangmanPositions":["","","","","","","","","",""],"Letter_used":[107,116],"Alpha_letter":"abcdefghijklmnopqrstuvwxyz","Hard":false,"Voyelle_used":null}
