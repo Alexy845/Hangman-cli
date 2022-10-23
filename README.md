@@ -60,6 +60,11 @@ go run main.go --startWith asset/save.txt
 go run . --hard asset/words.txt
 ```
 
+<div style="text-align: justify">Un menu de démarrage en CLI, regroupant les fonctionnalité précédente, est également disponible via cette commande : </div>
+
+```bash
+./start.sh
+```
 ## Quelques Images du jeu
 ![damn](images/damn-sarcasm.gif)
 <div style="text-align: justify"> Voici quelques images du jeu : </div>
