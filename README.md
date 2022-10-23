@@ -9,7 +9,7 @@
     * [Installation](#installation)
     * [Lancement](#lancement)
 * [Fonctionnalités](#fonctionnalités)
-* [Fonctionnalités avancées](#fonctionnalités-avancées-(nécessitant-une-commande))
+* [Fonctionnalités avancées](#fonctionnalités-avancées-(-nécessitant-une-commande-))
 * [Quelques images du jeu](#Quelques-Images-du-jeu)
 
 ## Description :
@@ -52,7 +52,7 @@ go run main.go asset/words.txt
 - Il possède un affichage en Ascii-Art afin de rendre l'expérience de jeu plus agréable. (bonus) </div>
 
 
-## Fonctionnalités avancées (nécessitant une commande ):
+## Fonctionnalités avancées ( nécessitant une commande ) :
 
 <div style="text-align: justify"> Il est possible de sauvegarder une partie afin de la reprendre plus tard. (bonus start-and-stop) <br>
 Pour se faire, il faut se placer dans le dossier du projet et lancer la commande suivante pendant le jeu: </div>
