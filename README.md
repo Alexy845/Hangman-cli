@@ -8,7 +8,7 @@
   * [Installation](#installation)
   * [Lancement](#lancement)
 * [Fonctionnalités](#fonctionnalités)
-* [Fonctionnalités avancées](#fonctionnalités-avancées-(nécessitant-une-commande))
+* [Fonctionnalités avancées](#fonctionnalités-avancées)
 * [Quelques images du jeu](#quelques-images-du-jeu)
 
 ## Description
@@ -51,7 +51,7 @@ go run main.go asset/words.txt
 - il peut stockez les lettres suggérées par le joueur afin qu'il ne puisse pas proposer deux fois la même lettre. (si c'est le czs un message s'affiche ainsi que la liste des lettres déjà proposées). (bonus) <br>
 - Il possède un affichage en Ascii-Art afin de rendre l'expérience de jeu plus agréable. (bonus) </div>
 
-## Fonctionnalités avancées (nécessitant une commande)
+## Fonctionnalités avancées
 
 <div style="text-align: justify"> Il est possible de sauvegarder une partie afin de la reprendre plus tard. (bonus start-and-stop) <br>
 Pour se faire, il faut se placer dans le dossier du projet et lancer la commande suivante pendant le jeu: </div>
