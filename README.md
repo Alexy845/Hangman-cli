@@ -8,13 +8,13 @@
   * [Installation](#installation)
   * [Lancement](#lancement)
 * [Fonctionnalités](#fonctionnalités)
-* [Fonctionnalités avancées](#fonctionnalités-avancées-(nécessitant une commande))
+* [Fonctionnalités avancées](#fonctionnalités-avancées)
 * [Quelques images du jeu](#quelques-images-du-jeu)
 
 ## Description
 
 <div style="text-align: justify"> L'objectif de ce projet est de réaliser un jeu du pendu en Golang. <br>
-Le but est de trouver le mot caché en entrant des lettres (ou le mot entier) avec un nombre de tentatives limité. Si le mot contient la lettre entrée, elle est affichée. Sinon, le joueur perd une vie (ou 2 dans le cas du mot) et le dessin d'un pendu se met à apparaît. Le joueur a 10 vies au total. S'il trouve le mot avant de perdre ses 10 vies, il gagne. Sinon, il perd et le dessin est terminé. </div>
+Le but est de trouver le mot caché en entrant des lettres (ou le mot entier) avec un nombre de tentatives limité. Si le mot contient la lettre entrée, elle est affichée. Sinon, le joueur perd une vie (ou 2 dans le cas du mot) et le dessin d'un pendu se met à apparaître. Le joueur a 10 vies au total. S'il trouve le mot avant de perdre ses 10 vies, il gagne. Sinon, il perd et le dessin est terminé. </div>
 
 ## La base du projet
 
@@ -46,13 +46,12 @@ go run main.go asset/words.txt
 
 <div style="text-align: justify"> Le programme possède plusieurs fonctionnalités : <br>
 - il est capable de gérer les lettres ayant un accent <br>
-- il transforme toute les lettres en majuscule pour un esthétique uniforme <br>
+- il transforme toutes les lettres en majuscule pour un esthétique uniforme <br>
 - le joueur peut proposer un mot complet ou une lettre (Si le mot est trouvé le jeu s'arrête. Sinon, le compteur de tentatives diminue de 2). (bonus)<br>
 - il peut stockez les lettres suggérées par le joueur afin qu'il ne puisse pas proposer deux fois la même lettre. (si c'est le czs un message s'affiche ainsi que la liste des lettres déjà proposées). (bonus) <br>
 - Il possède un affichage en Ascii-Art afin de rendre l'expérience de jeu plus agréable. (bonus) </div>
 
-## Fonctionnalités avancées (nécessitant une commande)
-
+## Fonctionnalités avancées
 <div style="text-align: justify"> Il est possible de sauvegarder une partie afin de la reprendre plus tard. (bonus start-and-stop) <br>
 Pour se faire, il faut se placer dans le dossier du projet et lancer la commande suivante pendant le jeu: </div>
 
@@ -68,10 +67,10 @@ go run main.go --startWith asset/save.txt
 
 <div style="text-align: justify"> Il est possible de lancer une partie en mode hard et d'avoir ainsi plusieurs contraintes : <br>
 - nombre de lettres révélées réduit <br>
-- pas d'affichage des lettres déjà utilisés par l'utilisateur (si déjà utlisé -1 sur le compteur) <br>
-- pouvoir soumettre seulement 3 voyelles (-1 si une voyelle déjà soumise ou si la limite de 3 est dépassée) <br>
+- pas d'affichage des lettres déjà utilisées par l'utilisateur (si déjà utilisée -1 sur le compteur) <br>
+- pouvoir soumettre seulement 3 voyelles (-1 si une voyelle déjà soumise ou si la limite de 3 est dépassée)<br> </div>
 
-Pour se faire, il faut se placer dans le dossier et lancer la commande suivante :</div>
+Pour ce faire, il faut se placer dans le dossier et lancer la commande suivante :</div>
 
 ```bash
 go run . --hard asset/words.txt
