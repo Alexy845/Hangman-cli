@@ -3,14 +3,14 @@
 
 ## Sommaire :
 
-* [Description](#Description)
-* [La base du projet](#La-base-du-projet)
+* [Description](#description)
+* [La base du projet](#la-base-du-projet)
 * [Utilisation](#utilisation)
     * [Installation](#installation)
     * [Lancement](#lancement)
 * [Fonctionnalités](#fonctionnalités)
-* [Fonctionnalités avancées](#fonctionnalités-avancées-(-nécessitant-une-commande-))
-* [Quelques images du jeu](#Quelques-Images-du-jeu)
+* [Fonctionnalités avancées](#fonctionnalités-avancées-nécessitant-une-commande)
+* [Quelques images du jeu](#quelques-images-du-jeu)
 
 ## Description :
 
