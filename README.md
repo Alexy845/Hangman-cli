@@ -19,7 +19,7 @@ Le but est de trouver le mot caché en entrant des lettres (ou le mot entier) av
 
 ## La base du projet :
 
-<div style="text-align: justify"> Le projet se decompose en  plusieurs parties : </div>
+<div style="text-align: justify"> Le projet se compose de plusieurs parties : </div>
 <div style="text-align: justify"> - Le fichier main.go qui contient l'initialisation du jeu. </div>
 <div style="text-align: justify"> - Le dossier fonctions qui contient les fonctions du jeu ainsi que le fichier word.go </div>
 <div style="text-align: justify"> - Le dossier asset qui contient les fichiers textes contenant les mots utilisés par le jeu, l'ASCII Art du hangman, le fichier les lettres en ASCII Art et un fichier save pour pouvoir sauvegarder sa progression. </div>
@@ -49,7 +49,7 @@ go run main.go asset/words.txt
 - il transforme toute les lettres en majuscule pour un esthétique uniforme <br>
 - le joueur peut proposer un mot complet ou une lettre (Si le mot est trouvé le jeu s'arrête. Sinon, le compteur de tentatives diminue de 2). (bonus)<br>
 - il peut stockez les lettres suggérées par le joueur afin qu'il ne puisse pas proposer deux fois la même lettre. (si c'est le czs un message s'affiche ainsi que la liste des lettres déjà proposées). (bonus) <br>
-- Il possède un affichage en Ascii-Art afin de rendre l'expérience de jeu plus agréable. (bonus)
+- Il possède un affichage en Ascii-Art afin de rendre l'expérience de jeu plus agréable. (bonus) </div>
 
 
 ## Fonctionnalités avancées (nécessitant une commande ):
