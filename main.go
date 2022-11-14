@@ -3,7 +3,7 @@ package main
 import (
 	"encoding/json"
 	"fmt"
-	hangman "hangman/fonctions"
+	hangman "hangmanweb/hangman-classic/fonctions"
 	"io/ioutil"
 	"log"
 	"os"
